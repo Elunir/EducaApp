@@ -44,6 +44,8 @@ export interface TextFieldProps extends TextInputProps {
    */
   label?: string
 
+  labelColor?: TextStyle["color"]
+
   /**
    * Optional container style overrides useful for margins & padding.
    */
@@ -71,6 +73,7 @@ export function TextField(props: TextFieldProps) {
     placeholder,
     labelTx,
     label,
+    labelColor,
     preset = "default",
     style: styleOverride,
     inputStyle: inputStyleOverride,
@@ -84,7 +87,7 @@ export function TextField(props: TextFieldProps) {
 
   return (
     <View style={containerStyles}>
-      <Text preset="fieldLabel" tx={labelTx} text={label} />
+      <Text preset="fieldLabel" tx={labelTx} text={label} color={labelColor} />
       <TextInput
         placeholder={actualPlaceholder}
         placeholderTextColor={color.palette.lighterGrey}

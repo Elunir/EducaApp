@@ -34,4 +34,19 @@ export interface TextProps extends TextProperties {
    * One of the different types of text presets.
    */
   preset?: TextPresets
+
+  /**
+   * Optional color attribute.
+   */
+  color?: TextStyle["color"]
+
+  /**
+   * Optional fontWeight attribute.
+   */
+  fontWeight?: TextStyle["fontWeight"]
+
+  /**
+   * Optional fontSize attribute.
+   */
+  fontSize?: TextStyle["fontSize"]
 }
