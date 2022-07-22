@@ -8,7 +8,7 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { DemoScreen, DemoListScreen, LoginScreen, RegisterScreen, HomeScreen } from "../screens"
+import { DemoScreen, DemoListScreen, LoginScreen, RegisterScreen, HomeScreen, PaymentMethodScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 
 /**
@@ -30,6 +30,7 @@ export type NavigatorParamList = {
   // 🔥 Your screens go here
   register: undefined
   home: undefined
+  paymentMethod: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -49,7 +50,7 @@ const AppStack = () => {
       {/** 🔥 Your screens go here */}
       <Stack.Screen name="register" component={RegisterScreen} />
       <Stack.Screen name="home" component={HomeScreen} />
-
+      <Stack.Screen name="paymentMethod" component={PaymentMethodScreen} />
     </Stack.Navigator>
   )
 }

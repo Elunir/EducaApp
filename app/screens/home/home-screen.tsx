@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { observer } from "mobx-react-lite"
 import { StackScreenProps } from "@react-navigation/stack"
-import { NavigatorParamList } from "../../navigators"
+import { navigate, NavigatorParamList } from "../../navigators"
 import { Screen, Text } from "../../components"
 import styles from "../home/home-styles"
 import { FlatList, SectionList, TouchableOpacity, View } from "react-native"
@@ -137,6 +137,10 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
       },
     ]
 
+    const paymentScreen = () => {
+      navigate("paymentMethod")
+    }
+
     return (
       <Screen preset="scroll">
         <View style={styles.headerContainer}>
@@ -155,7 +159,7 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
               fontSize={14}
             />
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={paymentScreen}>
             <Icon name="bell" color="gray" size={32} />
             <View style={styles.notificationAlert}>
               <Icon name="circle" color="white" size={14} />
@@ -171,6 +175,8 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
         />
         <View>
           <SectionList
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             sections={data}
             style={styles.sectionList}
             renderSectionHeader={({ section }) => (
@@ -183,6 +189,8 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
                 />
                 <FlatList
                   data={section.data}
+                  showsHorizontalScrollIndicator={false}
+                  showsVerticalScrollIndicator={false}
                   renderItem={({ item }) => <RecentCardItem item={item} />}
                   keyExtractor={(item) => item.id.toString()}
                   horizontal
@@ -199,6 +207,8 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
             data={dataTwo}
             style={styles.seperatorMargin}
             horizontal
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             renderItem={({ item }) => (
               <>
                 <TouchableOpacity
@@ -215,6 +225,8 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
           />
           <SectionList
             sections={dataTwo}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             renderSectionHeader={({ section }) => {
               return (
                 section.title === Category && (
@@ -237,6 +249,8 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
           <SectionList
             sections={dataThree}
             style={styles.sectionList}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             keyExtractor={(item) => item.id.toString()}
             renderSectionHeader={({ section }) => {
               return (
@@ -248,6 +262,8 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
                     fontSize={16}
                   />
                   <FlatList
+                    showsHorizontalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false}
                     data={section.data}
                     renderItem={({ item }) => <NewsCardItem item={item} />}
                     keyExtractor={(item) => item.id.toString()}

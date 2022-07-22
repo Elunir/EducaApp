@@ -5,7 +5,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'row',
     marginVertical: 8,
-    width: 230
+    maxWidth: 220,
+    minWidth: 220,
+    width: 220
   },
   cardDetails:{
     flexDirection: 'column',
@@ -17,10 +19,15 @@ const styles = StyleSheet.create({
     height: 114,
     width: 140,
   },
+  postDetail:{
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
   postDetails:{
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: 220
   }
 })
 export default styles

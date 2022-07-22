@@ -5,3 +5,4 @@ export * from "./login/login-screen"
 // export other screens here
 export * from "./register/register-screen"
 export * from "./home/home-screen"
+export * from "./payment-method/payment-method-screen"
