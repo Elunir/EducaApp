@@ -18,7 +18,7 @@ export const RegisterScreen: FC<StackScreenProps<NavigatorParamList, "login">> =
   };
 
   const handleRegister = () => {
-    navigate("home");
+    navigate("tabs");
   };
 
 

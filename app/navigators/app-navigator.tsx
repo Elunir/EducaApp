@@ -10,6 +10,7 @@ import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { DemoScreen, DemoListScreen, LoginScreen, RegisterScreen, HomeScreen, PaymentMethodScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
+import { TabNavigator } from "./tab/tab-navigator"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -29,8 +30,7 @@ export type NavigatorParamList = {
   demoList: undefined
   // 🔥 Your screens go here
   register: undefined
-  home: undefined
-  paymentMethod: undefined
+  tabs: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -49,8 +49,7 @@ const AppStack = () => {
       <Stack.Screen name="demoList" component={DemoListScreen} />
       {/** 🔥 Your screens go here */}
       <Stack.Screen name="register" component={RegisterScreen} />
-      <Stack.Screen name="home" component={HomeScreen} />
-      <Stack.Screen name="paymentMethod" component={PaymentMethodScreen} />
+      <Stack.Screen name="tabs" component={TabNavigator} />
     </Stack.Navigator>
   )
 }
@@ -82,5 +81,5 @@ AppNavigator.displayName = "AppNavigator"
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ["welcome"]
+const exitRoutes = ["login"]
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)

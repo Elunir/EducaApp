@@ -2,6 +2,12 @@
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
+    checkout:{
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        marginTop: 20
+    },
     checkoutButton:{
         backgroundColor: '#51C3FE',
         borderRadius: 4,
@@ -27,9 +33,9 @@ const styles = StyleSheet.create({
     headerContainer:{
         elevation: 0.5,
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
+        paddingHorizontal:48,
         paddingVertical: 20,
-        paddingHorizontal: 20,
     },
     paymentMethod:{
         marginHorizontal: 16,
@@ -46,10 +52,18 @@ const styles = StyleSheet.create({
         padding: 16
     },
     paymentMethodFooter:{
+        backgroundColor: '#F5F5F5',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        marginTop: 260,
         padding: 30,
+    },
+    paymentMethodFooterContainer:{
+        justifyContent: 'space-between',
+    },
+    paymentMethodFullContainer:{
+        flex: 1,
+        justifyContent: 'space-between',
+        marginBottom: 20
     },
     radioGroup:{
         alignItems: 'center',
@@ -57,12 +71,6 @@ const styles = StyleSheet.create({
     },
     step:{
         alignItems: 'center',
-    },
-    checkout:{
-        alignItems: 'center',
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        marginBottom: 40
     }
 })
 
