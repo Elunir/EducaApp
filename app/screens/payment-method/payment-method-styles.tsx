@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         paddingVertical: 20,
+        paddingHorizontal: 20,
     },
     paymentMethod:{
         marginHorizontal: 16,
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
+        marginBottom: 40
     }
 })
 
